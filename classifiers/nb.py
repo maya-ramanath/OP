@@ -14,11 +14,10 @@ from sklearn.pipeline import Pipeline
 import numpy as np
 
 
-def runClassifiers ():
+def runClassifiers (dataDir):
     
-    data = load_files('/Users/maya/git/OP/Test')
-    
-    
+    data = load_files(dataDir)
+
     nbClassifier = Pipeline([('vect', CountVectorizer()),
                              ('tfidf', TfidfTransformer()),
                              ('classifier', MultinomialNB())])
@@ -51,4 +50,4 @@ def runNB ():
 
 if __name__ == '__main__':
     #runNB()
-    runClassifiers()
+    runClassifiers('/Users/maya/git/OP/Data/Load')
